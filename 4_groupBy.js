@@ -1,20 +1,20 @@
 
 
 Array.prototype.groupBy = function (transformer) {
-    const group = {};  
-    
+    const group = {};
+
     this.forEach(element => {
-        const key = transformer(element);  
+        const key = transformer(element);
 
         // Verifica se a chave já existe no objeto 'grouped'
         if (!group[key]) {
             group[key] = [];  // Se a chave não existir, cria um array vazio
         }
 
-        group[key].push(element);  
+        group[key].push(element);
     });
 
-    return group;  
+    return group;
 };
 
 
