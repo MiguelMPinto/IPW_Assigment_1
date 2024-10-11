@@ -62,3 +62,19 @@ const mixedArr3 = [20, 'hello', 50];      // contains non-number elements
 console.log(validateArrayElements(mixedArr1, mixedValidator)); // true
 console.log(validateArrayElements(mixedArr2, mixedValidator)); // false
 console.log(validateArrayElements(mixedArr3, mixedValidator)); // false
+
+
+const arrayValidator = {
+  validators: [
+    (val) => Array.isArray(val),
+    (val) => val.length >= 2
+  ],
+};
+
+const arrArr1 = [[1, 2], [3, 4, 5]];
+const arrArr2 = [[1], [2, 3], 'not an array'];
+const arrArr3 = [[1, 2], [3]];
+
+console.log(validateArrayElements(arrArr1, arrayValidator)); // true
+console.log(validateArrayElements(arrArr2, arrayValidator)); // false
+console.log(validateArrayElements(arrArr3, arrayValidator)); // false
